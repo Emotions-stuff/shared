@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+version '0.9'
+group 'com.emotionchild'
+description = 'Nothing to see here'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+ext {
+    moduleName = 'Liarel'
+}
+
+tasks.withType(JavaCompile) {
+    dependsOn 'clean'
+    options.encoding = 'UTF-8'
+    options.compilerArgs << "-Xlint:-unchecked"
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    //
+}
